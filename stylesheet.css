@@ -1,17 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
 
-h1 {
+/* h1 {
     font-family: "JetBrains Mono", monospace;
     font-size: 2.5em;
     color: #752b80;
-}
+} */
 
 body {
     background-color: #010101;
-}
+}   
 
-p {
+/* p {
     font-family: "JetBrains Mono", monospace;
     font-size: 1.2em;
+    color: #1d63a1;
+} */
+
+.temp {
+    font-family: "JetBrains Mono", monospace;
+    /* font-size: 1.5em; */
     color: #1d63a1;
 }
