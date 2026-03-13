@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap'); 
 /* h1 {
     font-family: "JetBrains Mono", monospace;
     font-size: 2.5em;
@@ -7,7 +8,7 @@
 } */
 
 body {
-    background-color: #010101;
+    background-color: #09001f;
 }   
 
 /* p {
@@ -19,5 +20,57 @@ body {
 .temp {
     font-family: "JetBrains Mono", monospace;
     /* font-size: 1.5em; */
-    color: #1d63a1;
+    color: #fc0b69;
 }
+
+.coolTriangle {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 400px;
+    height: 400px;
+
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+    background: #fc0b69;
+    overflow: hidden;
+    /* le text */
+/* 
+    font-family: "JetBrains Mono", monospace;
+    color: #fc0b69;
+    font-size: 1.5em;
+    outline: #09001f;
+    outline-width: 2px;
+    outline-style: solid;
+     */
+}
+
+.triangleText {
+    font-family: "Poppins", monospace;
+    font-size: 4.5em;
+    line-height: 0.8em;
+
+    color: transparent;
+    -webkit-text-stroke: 2.4px #09001f;
+    -webkit-text-stroke-linecap: round;
+    -webkit-text-stroke-linejoin: round;
+
+    display: flex;
+    width: max-content;
+
+    white-space: pre-line;
+    
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+
+
+/*
+primary: fc0b69
+background: 09001f
+accent: 001837
+highlight: ffffff
+
+
+*/
