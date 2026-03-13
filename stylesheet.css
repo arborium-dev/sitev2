@@ -32,7 +32,7 @@ body {
 
     clip-path: polygon(100% 0, 100% 100%, 0 100%);
     background: #fc0b69;
-    overflow: hidden;
+    /* overflow: hidden; */
     /* le text */
 /* 
     font-family: "JetBrains Mono", monospace;
@@ -47,22 +47,22 @@ body {
 .triangleText {
     font-family: "Poppins", monospace;
     font-size: 4.5em;
-    line-height: 0.8em;
+    line-height: 0.75em;
 
     color: transparent;
     -webkit-text-stroke: 2.4px #09001f;
     -webkit-text-stroke-linecap: round;
     -webkit-text-stroke-linejoin: round;
-
-    display: flex;
-    width: max-content;
-
-    white-space: pre-line;
     
+    
+    text-align: right;
+
     position: absolute;
-    right: 0;
     bottom: 0;
+    
 }
+
+
 
 
 
