@@ -63,6 +63,36 @@ body {
 }
 
 
+.currentlyPlaying {
+    transform: rotate(-45deg);
+    font-family: "Poppins", monospace;
+    font-size: 4.5em;
+    
+    text-wrap: nowrap;
+
+    color:transparent;
+    -webkit-text-stroke: 2.4px #204887;
+    -webkit-text-stroke-linecap: round;
+    -webkit-text-stroke-linejoin: round;
+
+    position: fixed;
+    right: 0;
+    bottom: -50px;
+    
+    animation: scroll 8s linear infinite;
+}
+
+@keyframes scroll {
+    0% {
+        right: -50vw;
+        bottom: 50vw;
+    }   
+    100% {
+        right: 10vw;
+        bottom: -10vw;
+    }
+}
+
 
 
 
