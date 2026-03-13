@@ -27,8 +27,8 @@ body {
     position: fixed;
     right: 0;
     bottom: 0;
-    width: 400px;
-    height: 400px;
+    width: 430px;
+    height: 430px;
 
     clip-path: polygon(100% 0, 100% 100%, 0 100%);
     background: #fc0b69;
@@ -50,7 +50,8 @@ body {
     line-height: 0.75em;
 
     color: transparent;
-    -webkit-text-stroke: 2.4px #09001f;
+    /* -webkit-text-stroke: 2.4px #09001f; */
+    -webkit-text-stroke: 2.4px #bc0b39;
     -webkit-text-stroke-linecap: round;
     -webkit-text-stroke-linejoin: round;
     
@@ -84,16 +85,36 @@ body {
 
 @keyframes scroll {
     0% {
-        right: -50vw;
-        bottom: 50vw;
+        right: -45vw;
+        bottom: 45vw;
     }   
     100% {
-        right: 10vw;
-        bottom: -10vw;
+        right: 20vw;
+        bottom: -20vw;
     }
 }
 
+.coolCircle {
+    position: fixed;
+    right: 50px;
+    top: 50px;
+    width: 1000px;
+    height: 1000px;
+    z-index: -1;
+    background-color: #001837;
+    /* border-radius: 50%; */
 
+    animation: rotate 20s steps(8) infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
 
 /*
