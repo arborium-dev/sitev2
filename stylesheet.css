@@ -1,17 +1,127 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
 
-h1 {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap'); 
+/* h1 {
     font-family: "JetBrains Mono", monospace;
     font-size: 2.5em;
     color: #752b80;
-}
+} */
 
 body {
-    background-color: #010101;
-}
+    background-color: #09001f;
+}   
 
-p {
+/* p {
     font-family: "JetBrains Mono", monospace;
     font-size: 1.2em;
     color: #1d63a1;
+} */
+
+.temp {
+    font-family: "JetBrains Mono", monospace;
+    /* font-size: 1.5em; */
+    color: #fc0b69;
 }
+
+.coolTriangle {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 430px;
+    height: 430px;
+
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+    background: #fc0b69;
+    /* overflow: hidden; */
+    /* le text */
+/* 
+    font-family: "JetBrains Mono", monospace;
+    color: #fc0b69;
+    font-size: 1.5em;
+    outline: #09001f;
+    outline-width: 2px;
+    outline-style: solid;
+     */
+}
+
+.triangleText {
+    font-family: "Poppins", monospace;
+    font-size: 4.5em;
+    line-height: 0.75em;
+
+    color: transparent;
+    /* -webkit-text-stroke: 2.4px #09001f; */
+    -webkit-text-stroke: 2.4px #bc0b39;
+    -webkit-text-stroke-linecap: round;
+    -webkit-text-stroke-linejoin: round;
+    
+    
+    text-align: right;
+
+    position: absolute;
+    bottom: 0;
+    
+}
+
+
+.currentlyPlaying {
+    transform: rotate(-45deg);
+    font-family: "Poppins", monospace;
+    font-size: 4.5em;
+    
+    text-wrap: nowrap;
+
+    color:transparent;
+    -webkit-text-stroke: 2.4px #204887;
+    -webkit-text-stroke-linecap: round;
+    -webkit-text-stroke-linejoin: round;
+
+    position: fixed;
+    right: 0;
+    bottom: -50px;
+    
+    animation: scroll 8s linear infinite;
+}
+
+@keyframes scroll {
+    0% {
+        right: -45vw;
+        bottom: 45vw;
+    }   
+    100% {
+        right: 20vw;
+        bottom: -20vw;
+    }
+}
+
+.coolCircle {
+    position: fixed;
+    right: 50px;
+    top: 50px;
+    width: 1000px;
+    height: 1000px;
+    z-index: -1;
+    background-color: #001837;
+    /* border-radius: 50%; */
+
+    animation: rotate 20s steps(8) infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/*
+primary: fc0b69
+background: 09001f
+accent: 001837
+highlight: ffffff
+
+
+*/
