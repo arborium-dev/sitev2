@@ -207,8 +207,15 @@ body {
     height: 200px;
 
     clip-path: polygon(0 0, 100% 0, 0 100%);
-    background: #fc0b69;
+    background-color: #fc0b69;
+
+    cursor: pointer;
+    /* transition: opacity 0.3s ease; */
 }
+
+/* .dayTriangle:hover {
+    background-color: white;
+} */
 
 .yearText{
     font-family: "Nikkyou Sans", monospace;

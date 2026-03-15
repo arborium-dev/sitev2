@@ -1,6 +1,7 @@
 const plusElements = document.querySelectorAll('.smallPlus');
 const currentTimeElement = document.querySelector('.timeText');
 const currrentDateElement = document.querySelector('.dateText');
+const dayTriangle = document.querySelector('.dayTriangle');
 
 function updateTime() {
     const now = new Date();
@@ -28,4 +29,8 @@ setInterval(updateDate, 86400000); // Update every day
 plusElements.forEach(plus => {
     const randomDelay = Math.random() * 5;
     plus.style.animationDelay =  randomDelay + 's';
+});
+
+dayTriangle.addEventListener('click', () => {
+     window.location.href = 'overseer.html'; // Replace with your target URL
 });
