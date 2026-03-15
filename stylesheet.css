@@ -72,7 +72,8 @@ body {
     text-wrap: nowrap;
 
     color:transparent;
-    -webkit-text-stroke: 2.4px #204887;
+    /* -webkit-text-stroke: 2.4px #204887; */
+    -webkit-text-stroke: 2.4px #fc0b69;
     -webkit-text-stroke-linecap: round;
     -webkit-text-stroke-linejoin: round;
 
@@ -101,15 +102,61 @@ body {
     width: 1000px;
     height: 1000px;
     z-index: -1;
-    background-color: #001837;
-    /* border-radius: 50%; */
+    border: 20px solid #001837;
+    border-radius: 50%;
+    clip-path: polygon(50% 50%, 65% 35%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 65% 65%);
 
-    animation: rotate 20s steps(8) infinite;
+    animation: rotate 16s linear infinite;
 }
 
 @keyframes rotate {
     0% {
         transform: rotate(0deg);
+    }
+    6.25% {
+        transform: rotate(0deg);
+    }
+    12.5% {
+        transform: rotate(45deg);
+    }
+    18.75% {
+        transform: rotate(45deg);
+    }
+    25% {
+        transform: rotate(90deg);
+    }
+    31.25% {
+        transform: rotate(90deg);
+    }
+    37.5% {
+        transform: rotate(135deg);
+    }
+    43.75% {
+        transform: rotate(135deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    56.25% {
+        transform: rotate(180deg);
+    }
+    62.5% {
+        transform: rotate(225deg);
+    }
+    68.75% {
+        transform: rotate(225deg);
+    }
+    75% {
+        transform: rotate(270deg);
+    }
+    81.25% {
+        transform: rotate(270deg);
+    }
+    87.5% {
+        transform: rotate(315deg);
+    }
+    93.75% {
+        transform: rotate(315deg);
     }
     100% {
         transform: rotate(360deg);
