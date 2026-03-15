@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+@font-face {
+    font-family: 'Nikkyou Sans';
+    src: url('../fonts/Nikkyou.ttf') format('truetype');
+}
 /* h1 {
     font-family: "JetBrains Mono", monospace;
     font-size: 2.5em;
@@ -17,18 +22,13 @@ body {
     color: #1d63a1;
 } */
 
-.temp {
-    font-family: "JetBrains Mono", monospace;
-    /* font-size: 1.5em; */
-    color: #fc0b69;
-}
 
 .coolTriangle {
     position: fixed;
     right: 0;
     bottom: 0;
-    width: 430px;
-    height: 430px;
+    width: 450px;
+    height: 450px;
 
     clip-path: polygon(100% 0, 100% 100%, 0 100%);
     background: #fc0b69;
@@ -66,25 +66,27 @@ body {
 
 .currentlyPlaying {
     transform: rotate(-45deg);
-    font-family: "Poppins", monospace;
+    font-family: "Nikkyou Sans", monospace;
     font-size: 4.5em;
     
     text-wrap: nowrap;
 
-    color:transparent;
-    /* -webkit-text-stroke: 2.4px #204887; */
+    /* color:transparent;
+    /* -webkit-text-stroke: 2.4px #204887; 
     -webkit-text-stroke: 2.4px #fc0b69;
     -webkit-text-stroke-linecap: round;
-    -webkit-text-stroke-linejoin: round;
+    -webkit-text-stroke-linejoin: round; */
+
+    color: #fc0b69;
 
     position: fixed;
     right: 0;
-    bottom: -50px;
+    bottom: -40px;
     
-    animation: scroll 8s linear infinite;
+    animation: nowPlayingScroll 8s linear infinite;
 }
 
-@keyframes scroll {
+@keyframes nowPlayingScroll {
     0% {
         right: -45vw;
         bottom: 45vw;
@@ -106,10 +108,10 @@ body {
     border-radius: 50%;
     clip-path: polygon(50% 50%, 65% 35%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 65% 65%);
 
-    animation: rotate 16s linear infinite;
+    animation: circleRotate 16s linear infinite;
 }
 
-@keyframes rotate {
+@keyframes circleRotate {
     0% {
         transform: rotate(0deg);
     }
@@ -163,6 +165,29 @@ body {
     }
 }
 
+.smallPlus {
+    position: fixed;
+    /* right: 20px;
+    top: 20px; */
+    font-family: "Impact", monospace;
+    
+    font-size: 4em;
+    color: #fc0b69;
+    animation: plusRotate 5s linear infinite;
+    transform-origin: center;
+}
+
+@keyframes plusRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    95% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(180deg);
+    }
+}
 
 /*
 primary: fc0b69
