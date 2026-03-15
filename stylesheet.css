@@ -6,6 +6,16 @@
     font-family: 'Nikkyou Sans';
     src: url('../fonts/Nikkyou.ttf') format('truetype');
 }
+
+@font-face {
+    font-family: 'Sawarabi';
+    src: url('../fonts/Sawarabi.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Science';
+    src: url('../fonts/Science.ttf') format('truetype');
+}
 /* h1 {
     font-family: "JetBrains Mono", monospace;
     font-size: 2.5em;
@@ -187,6 +197,47 @@ body {
     100% {
         transform: rotate(180deg);
     }
+}
+
+.dayTriangle {
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    width: 200px;
+    height: 200px;
+
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    background: #fc0b69;
+}
+
+.yearText{
+    font-family: "Nikkyou Sans", monospace;
+    font-size: 1.2em;
+    color: #fc0b69;
+
+    position: fixed;
+    top: 50px;
+    left: 280px;
+}
+
+.timeText {
+    font-family: "Science", monospace;
+    font-size: 1.4em;
+    color: #fc0b69;
+
+    position: fixed;
+    top: 70px;
+    left: 280px;
+}
+
+.dateText {
+    font-family: "Science", monospace;
+    font-size: 1.4em;
+    color: #09001f;
+
+    position: fixed;
+    top: 60px;
+    left: 60px;
 }
 
 /*
