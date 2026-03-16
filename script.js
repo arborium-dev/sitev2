@@ -34,3 +34,13 @@ plusElements.forEach(plus => {
 dayTriangle.addEventListener('click', () => {
      window.location.href = 'overseer.html'; // Replace with your target URL
 });
+
+const maskTriangle = document.querySelector('.maskTriangle');
+
+dayTriangle.addEventListener('mouseenter', () => {
+    maskTriangle.style.animation = 'maskCoverDayTriangle 0.15s ease-out forwards';
+});
+
+dayTriangle.addEventListener('mouseleave', () => {
+    maskTriangle.style.animation = 'maskUncoverDayTriangle 0.15s ease-out forwards';
+});
