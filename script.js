@@ -8,7 +8,7 @@ function updateTime() {
     const hours = now.getHours().toString().padStart(2, '0');
     const minutes = now.getMinutes().toString().padStart(2, '0');
     if (hours >= 12) {
-        currentTimeElement.textContent = `the current time is ${hours}:${minutes} PM`;
+        currentTimeElement.textContent = `the current time is ${hours-12}:${minutes} PM`;
     } else {
         currentTimeElement.textContent = `the current time is ${hours}:${minutes} AM`;
     }
@@ -17,7 +17,7 @@ function updateTime() {
 function updateDate() {
     const now = new Date();
     const day = now.getDate();
-    currrentDateElement.textContent = `${day}`;
+    currrentDateElement.textContent = `${day} //back`;
 }
 
 updateTime();
