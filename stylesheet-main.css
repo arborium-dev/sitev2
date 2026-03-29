@@ -271,7 +271,7 @@ body {
 }
 
 .timeText {
-    font-family: "Science", monospace;
+    font-family: "Jetbrains Mono", monospace;
     font-size: 1.4em;
     color: #fc0b69;
 
@@ -382,6 +382,41 @@ body {
     -webkit-text-stroke-linejoin: round;
     z-index: 5;
 }
+
+a {
+    font-family: "Sawarabi", monospace;
+    position: fixed;
+    color: #fc0b69;
+    font-size: 2.5em;
+    text-decoration: none;
+    transition: fade 0.3s ease, color 0.3s ease;
+}
+
+a:hover {
+    color: #ffffff;
+}
+
+.aboutLink {
+    top: 50%;
+    left: 200px;
+    translate: 0 0%;
+}
+.blogLink {
+    top: 50%;
+    left: 200px;
+    translate: 0 100%;
+}
+.projectsLink {
+    top: 50%;
+    left: 200px;
+    translate: 0 200%;
+}
+.overseerLink {
+    top: 50%;
+    left: 200px;
+    translate: 0 300%;
+}
+
 /*  
 #playPauseButton path:hover {
     stroke: #001837;
