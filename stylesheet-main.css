@@ -309,6 +309,7 @@ body {
     height: 100%;
     object-fit: cover;
     object-position: center;
+    
 }
  
 #playPauseButton {
@@ -473,6 +474,31 @@ triangle.paused {
     animation-play-state: paused;
 }
 
+.topBigText {
+    position: fixed;
+    top: -17%;
+    right: 210px;
+    font-family: "Nikkyou Sans", monospace;
+    font-size: 20.5em;
+    color: transparent;
+    -webkit-text-stroke: 10px #001837;
+    -webkit-text-stroke-linecap: round;
+    -webkit-text-stroke-linejoin: round;
+    z-index: -5;
+}
+
+.bottomBigText {
+    position: fixed;
+    bottom: -12%;
+    left: 210px;
+    font-family: "Nikkyou Sans", monospace;
+    font-size: 20.5em;
+    color: transparent;
+    -webkit-text-stroke: 10px #001837;
+    -webkit-text-stroke-linecap: round;
+    -webkit-text-stroke-linejoin: round;
+    z-index: -5;
+}
 /*  
 #playPauseButton path:hover {
     stroke: #001837;
