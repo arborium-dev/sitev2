@@ -327,6 +327,61 @@ body {
 #playPauseButton path {
     transition: stroke 0.2s ease;
 }
+
+.mainLetter {
+    position: fixed;
+    top: 50%;
+    left: 210px;
+    translate: 0 -96%;
+    font-family: "Nikkyou Sans", monospace;
+    font-size: 7.5em;
+    color: transparent;
+    -webkit-text-stroke: 4px #fc0b69;
+    -webkit-text-stroke-linecap: round;
+    -webkit-text-stroke-linejoin: round;
+    z-index: 5;
+}
+
+.mainTitle {
+    position: fixed;
+    top: 50%;
+    left: 280px;
+    translate: 0 -100%;
+    font-family: "Nikkyou Sans", monospace;
+    font-size: 5.5em;
+    color: transparent;
+    /* -webkit-text-stroke: 2.4px #09001f; */
+    -webkit-text-stroke: 4px #fc0b69;
+    -webkit-text-stroke-linecap: round;
+    -webkit-text-stroke-linejoin: round;
+    z-index: 5;
+}
+
+.subTitle {
+    position: fixed;
+    top: 50%;
+    left: 280px;
+    translate: 0 -410%;
+    font-family: "Nikkyou Sans", monospace;
+    font-size: 1.5em;
+    color: #002f6d;
+    z-index: 5;
+}
+
+.extraTitle {
+    position: fixed;
+    top: 50%;
+    left: 280px;
+    translate: 355% -110%;
+    font-family: "Nikkyou Sans", monospace;
+    font-size: 2.5em;
+    color: transparent;
+    /* -webkit-text-stroke: 2.4px #09001f; */
+    -webkit-text-stroke: 2px #002f6d;
+    -webkit-text-stroke-linecap: round;
+    -webkit-text-stroke-linejoin: round;
+    z-index: 5;
+}
 /*  
 #playPauseButton path:hover {
     stroke: #001837;
