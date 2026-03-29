@@ -5,7 +5,7 @@ const dayTriangle = document.querySelector('.dayTriangle');
 const backgroundMusic = document.getElementById('backgroundMusic');
 const playPauseButton = document.getElementById('playPauseButton');
 const playPausePath = document.getElementById('playPausePath');
-const coolCircle = document.querySelector('.coolCircle');
+const coolCircles = document.querySelectorAll('.coolCircle');
 const currentlyPlaying = document.querySelector('.currentlyPlaying');
 const subTitle = document.querySelector('.subTitle');
 
@@ -20,9 +20,13 @@ function updateIcon() {
 
 function updateCircleAnimation() {
     if (backgroundMusic.paused) {
-        coolCircle.classList.add('paused');
+        coolCircles.forEach(circle => {
+            circle.classList.add('paused');
+        });
     } else {
-        coolCircle.classList.remove('paused');
+        coolCircles.forEach(circle => {
+            circle.classList.remove('paused');
+        });
     }
 }
 
