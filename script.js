@@ -2,6 +2,35 @@ const plusElements = document.querySelectorAll('.smallPlus');
 const currentTimeElement = document.querySelector('.timeText');
 const currrentDateElement = document.querySelector('.dateText');
 const dayTriangle = document.querySelector('.dayTriangle');
+const backgroundMusic = document.getElementById('backgroundMusic');
+const playPauseButton = document.getElementById('playPauseButton');
+const playPausePath = document.getElementById('playPausePath');
+
+
+function updateIcon() {
+    if (backgroundMusic.paused) {
+        playPausePath.setAttribute('stroke', '#fc0b69');
+    } else {
+        playPausePath.setAttribute('stroke', '#004db3');
+    }
+}
+
+playPauseButton.addEventListener('click', () => {
+    if (backgroundMusic.paused) {
+        backgroundMusic.play();
+    } else {
+        backgroundMusic.pause();
+    }
+});
+
+// Update icon when audio plays/pauses
+backgroundMusic.addEventListener('play', updateIcon);
+backgroundMusic.addEventListener('pause', updateIcon);
+
+// Set initial icon on page load
+updateIcon();
+
+
 
 function updateTime() {
     const now = new Date();
@@ -44,3 +73,5 @@ dayTriangle.addEventListener('mouseenter', () => {
 dayTriangle.addEventListener('mouseleave', () => {
     maskTriangle.style.animation = 'maskUncoverDayTriangle 0.15s ease-out forwards';
 });
+
+
