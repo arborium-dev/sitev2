@@ -126,7 +126,7 @@ body {
 }
 
 .coolCircle.paused {
-    animation-play-state: paused;
+    animation-play-state: paused !important;
 }
 
 @keyframes circleRotate {
