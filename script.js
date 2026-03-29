@@ -8,7 +8,8 @@ const playPausePath = document.getElementById('playPausePath');
 const coolCircles = document.querySelectorAll('.coolCircle');
 const currentlyPlaying = document.querySelector('.currentlyPlaying');
 const subTitle = document.querySelector('.subTitle');
-
+const tempoTriangle = document.querySelector('.topLeft');
+const tempoSquare = document.querySelectorAll('square');
 
 function updateIcon() {
     if (backgroundMusic.paused) {
@@ -17,6 +18,20 @@ function updateIcon() {
         playPausePath.setAttribute('stroke', '#004db3');
     }
 }
+
+function updateTempoAnimation() {
+    if (backgroundMusic.paused) {
+        tempoTriangle.classList.add('paused');
+        tempoSquare.forEach(square => {
+            square.classList.add('paused');
+        });
+    } else {
+        tempoTriangle.classList.remove('paused');
+        tempoSquare.forEach(square => {
+            square.classList.remove('paused');
+        });
+    }
+};
 
 function updateCircleAnimation() {
     if (backgroundMusic.paused) {
@@ -64,12 +79,14 @@ backgroundMusic.addEventListener('play', () => {
     updateCircleAnimation();
     updatePlusAnimations();
     updateCurrentlyPlaying();
+    updateTempoAnimation();
 });
 backgroundMusic.addEventListener('pause', () => {
     updateIcon();
     updateCircleAnimation();
     updatePlusAnimations();
     updateCurrentlyPlaying();
+    updateTempoAnimation();
 });
 
 // quote setter
@@ -95,6 +112,7 @@ updateCircleAnimation();
 updatePlusAnimations();
 updateCurrentlyPlaying();
 setRandomQuote();
+updateTempoAnimation();
 
 function updateTime() {
     const now = new Date();
@@ -134,17 +152,4 @@ dayTriangle.addEventListener('mouseleave', () => {
     maskTriangle.style.animation = 'maskUncoverDayTriangle 0.15s ease-out forwards';
 });
 
-// individual square control
-const squares = {
-    square1: document.getElementById('square1'),
-    square2: document.getElementById('square2'),
-    square3: document.getElementById('square3'),
-    square4: document.getElementById('square4')
-};
-
-// Object.values(squares).forEach(square => {
-//     square.addEventListener('click', () => {
-//         square.classList.toggle('active');
-//     });
-// });
 
