@@ -114,7 +114,7 @@ function updateDate() {
 }
 
 updateTime();
-setInterval(updateTime, 60000); // Update every minute
+setInterval(updateTime, 1000); // Update every second
 updateDate();
 setInterval(updateDate, 86400000); // Update every day
 
@@ -133,4 +133,18 @@ dayTriangle.addEventListener('mouseenter', () => {
 dayTriangle.addEventListener('mouseleave', () => {
     maskTriangle.style.animation = 'maskUncoverDayTriangle 0.15s ease-out forwards';
 });
+
+// individual square control
+const squares = {
+    square1: document.getElementById('square1'),
+    square2: document.getElementById('square2'),
+    square3: document.getElementById('square3'),
+    square4: document.getElementById('square4')
+};
+
+// Object.values(squares).forEach(square => {
+//     square.addEventListener('click', () => {
+//         square.classList.toggle('active');
+//     });
+// });
 
