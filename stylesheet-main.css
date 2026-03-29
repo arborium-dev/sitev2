@@ -299,6 +299,26 @@ body {
     object-position: center;
 }
  
+#playPauseButton {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    
+}
+
+#playPauseButton path {
+    transition: stroke 0.2s ease;
+}
+/*  
+#playPauseButton path:hover {
+    stroke: #001837;
+} */
 
 /*
 .infoBox {
