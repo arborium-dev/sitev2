@@ -17,7 +17,7 @@ function updateTime() {
 function updateDate() {
     const now = new Date();
     const day = now.getDate();
-    currrentDateElement.textContent = `${day} //back`;
+    currrentDateElement.textContent = `${day}`;
 }
 
 updateTime();
