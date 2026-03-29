@@ -5,13 +5,42 @@ const dayTriangle = document.querySelector('.dayTriangle');
 const backgroundMusic = document.getElementById('backgroundMusic');
 const playPauseButton = document.getElementById('playPauseButton');
 const playPausePath = document.getElementById('playPausePath');
-
+const coolCircle = document.querySelector('.coolCircle');
+const currentlyPlaying = document.querySelector('.currentlyPlaying');
 
 function updateIcon() {
     if (backgroundMusic.paused) {
         playPausePath.setAttribute('stroke', '#fc0b69');
     } else {
         playPausePath.setAttribute('stroke', '#004db3');
+    }
+}
+
+function updateCircleAnimation() {
+    if (backgroundMusic.paused) {
+        coolCircle.classList.add('paused');
+    } else {
+        coolCircle.classList.remove('paused');
+    }
+}
+
+function updatePlusAnimations() {
+    if (backgroundMusic.paused) {
+        plusElements.forEach(plus => {
+            plus.classList.add('paused');
+        });
+    } else {
+        plusElements.forEach(plus => {
+            plus.classList.remove('paused');
+        });
+    }
+}
+
+function updateCurrentlyPlaying() {
+    if (backgroundMusic.paused) {
+        currentlyPlaying.classList.add('paused');
+    } else {
+        currentlyPlaying.classList.remove('paused');
     }
 }
 
@@ -23,14 +52,25 @@ playPauseButton.addEventListener('click', () => {
     }
 });
 
-// Update icon when audio plays/pauses
-backgroundMusic.addEventListener('play', updateIcon);
-backgroundMusic.addEventListener('pause', updateIcon);
+// update icon and animation when audio plays/pauses
+backgroundMusic.addEventListener('play', () => {
+    updateIcon();
+    updateCircleAnimation();
+    updatePlusAnimations();
+    updateCurrentlyPlaying();
+});
+backgroundMusic.addEventListener('pause', () => {
+    updateIcon();
+    updateCircleAnimation();
+    updatePlusAnimations();
+    updateCurrentlyPlaying();
+});
 
-// Set initial icon on page load
+// set initial states on page load
 updateIcon();
-
-
+updateCircleAnimation();
+updatePlusAnimations();
+updateCurrentlyPlaying();
 
 function updateTime() {
     const now = new Date();
@@ -55,13 +95,9 @@ updateDate();
 setInterval(updateDate, 86400000); // Update every day
 
 
-plusElements.forEach(plus => {
-    const randomDelay = Math.random() * 5;
-    plus.style.animationDelay =  randomDelay + 's';
-});
 
 dayTriangle.addEventListener('click', () => {
-     window.location.href = 'overseer.html'; // Replace with your target URL
+     window.location.href = 'overseer.html'; 
 });
 
 const maskTriangle = document.querySelector('.maskTriangle');

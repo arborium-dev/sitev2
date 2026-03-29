@@ -96,14 +96,18 @@ body {
     animation: nowPlayingScroll 8s linear infinite;
 }
 
+.currentlyPlaying.paused {
+    animation-play-state: paused;
+}
+
 @keyframes nowPlayingScroll {
     0% {
-        right: -45vw;
-        bottom: 45vw;
+        right: -50vw;
+        bottom: 46.5vw;
     }   
     100% {
-        right: 20vw;
-        bottom: -20vw;
+        right: 30vw;
+        bottom: -33.5vw;
     }
 }
 
@@ -118,7 +122,11 @@ body {
     border-radius: 50%;
     clip-path: polygon(50% 50%, 65% 35%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 65% 65%);
     object-position: center;
-    animation: circleRotate 6s reverse infinite;
+    animation: circleRotate 9.79591836s reverse infinite;
+}
+
+.coolCircle.paused {
+    animation-play-state: paused;
 }
 
 @keyframes circleRotate {
@@ -185,6 +193,10 @@ body {
     color: #fc0b69;
     animation: plusRotate 5s linear infinite;
     transform-origin: center;
+}
+
+.smallPlus.paused {
+    animation-play-state: paused;
 }
 
 @keyframes plusRotate {
