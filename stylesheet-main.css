@@ -117,7 +117,7 @@ body {
     border: 20px solid #001837;
     border-radius: 50%;
     clip-path: polygon(50% 50%, 65% 35%, 100% 0%, 100% 100%, 0% 100%, 0% 0%, 65% 65%);
-
+    object-position: center;
     animation: circleRotate 6s reverse infinite;
 }
 
@@ -284,18 +284,23 @@ body {
     top: 330px;
     width: 300px;
     height: 300px;
-    object-position: center;
+    border-radius: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
 }
-/* 
-.profilePicture img {
+
+.pfp img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    overflow: hidden;
-    border-radius: 50%;
-    /* object-position: center; 
+    object-position: center;
 }
+ 
 
+/*
 .infoBox {
     position: fixed;
     right: 220px;
