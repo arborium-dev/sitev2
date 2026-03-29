@@ -432,14 +432,23 @@ a:hover {
 }
 
 square {
-    background-color: transparent;
+    /* background-color: transparent; */
     border: 6px solid #fc0b69;
     border-radius: 5px;
-    transition: all 0.3s ease;
+    animation: fadeIn 4.8979592s ease infinite reverse;
 }
 
-square:active {
-    background-color: #fc0b69;
+@keyframes fadeIn {
+    from {
+        background-color: transparent;
+    }
+    to {
+        background-color: #fc0b69;
+    }
+}
+
+square.paused {
+    animation-play-state: paused;
 }
 
 triangle {
@@ -448,13 +457,21 @@ triangle {
     border-radius: 5px;
     transition: all 0.3s ease;
     clip-path: polygon(100% 0, 100% 100%, 0 100%);
+    animation: fadeOut 4.8979592s ease infinite;
 }
 
-triangle:active {
-    background-color: transparent;
-    /* border-color: transparent; */
+@keyframes fadeOut {
+    from {
+        background-color: #fc0b69;
+    }
+    to {
+        background-color: transparent;
+    }
 }
 
+triangle.paused {
+    animation-play-state: paused;
+}
 
 /*  
 #playPauseButton path:hover {
