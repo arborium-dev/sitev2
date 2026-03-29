@@ -7,6 +7,8 @@ const playPauseButton = document.getElementById('playPauseButton');
 const playPausePath = document.getElementById('playPausePath');
 const coolCircle = document.querySelector('.coolCircle');
 const currentlyPlaying = document.querySelector('.currentlyPlaying');
+const subTitle = document.querySelector('.subTitle');
+
 
 function updateIcon() {
     if (backgroundMusic.paused) {
@@ -66,11 +68,29 @@ backgroundMusic.addEventListener('pause', () => {
     updateCurrentlyPlaying();
 });
 
+// quote setter
+const quotes = [
+    "Children aren't people - Clef",
+    "I'm a real asshole. Full time, always. - Beat",
+    "OAOAOAOAOAOAOAOA - Spinning Top",
+    "For Super Earth! - John Helldiver",
+    "I'm A Potato. - GlaDOS",
+    "You insignificant fuck! - Gabriel",
+    "Sigh, bapanada - Iselda",
+    "You, Sir, Are A Fish. - Arthur Morgan",
+];
+
+function setRandomQuote() {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    subTitle.textContent = quotes[randomIndex];
+}
+
 // set initial states on page load
 updateIcon();
 updateCircleAnimation();
 updatePlusAnimations();
 updateCurrentlyPlaying();
+setRandomQuote();
 
 function updateTime() {
     const now = new Date();
@@ -109,5 +129,4 @@ dayTriangle.addEventListener('mouseenter', () => {
 dayTriangle.addEventListener('mouseleave', () => {
     maskTriangle.style.animation = 'maskUncoverDayTriangle 0.15s ease-out forwards';
 });
-
 
