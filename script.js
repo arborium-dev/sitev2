@@ -10,12 +10,13 @@ const currentlyPlaying = document.querySelector('.currentlyPlaying');
 const subTitle = document.querySelector('.subTitle');
 const tempoTriangle = document.querySelector('.topLeft');
 const tempoSquare = document.querySelectorAll('square');
+const changePallateButton = document.getElementById('changePallateButton');
 
 function updateIcon() {
     if (backgroundMusic.paused) {
-        playPausePath.setAttribute('stroke', '#fc0b69');
+        playPausePath.setAttribute('stroke', 'var(--color-primary)');
     } else {
-        playPausePath.setAttribute('stroke', '#004db3');
+        playPausePath.setAttribute('stroke', 'var(--color-accent-bright)');
     }
 }
 
@@ -71,6 +72,14 @@ playPauseButton.addEventListener('click', () => {
     } else {
         backgroundMusic.pause();
     }
+});
+
+const colorPalettes = ['root', 'palette-cyberpunk', 'palette-sunset', 'palette-ocean'];
+let currentPaletteIndex = 0;
+
+changePallateButton.addEventListener('click', () => {
+    currentPaletteIndex = (currentPaletteIndex + 1) % colorPalettes.length;
+    document.body.className = colorPalettes[currentPaletteIndex];
 });
 
 // update icon and animation when audio plays/pauses
