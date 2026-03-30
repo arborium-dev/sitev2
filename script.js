@@ -11,6 +11,7 @@ const subTitle = document.querySelector('.subTitle');
 const tempoTriangle = document.querySelector('.topLeft');
 const tempoSquare = document.querySelectorAll('square');
 const changePallateButton = document.getElementById('changePallateButton');
+const githubButton = document.getElementById('githubButton');
 
 function updateIcon() {
     if (backgroundMusic.paused) {
@@ -74,12 +75,26 @@ playPauseButton.addEventListener('click', () => {
     }
 });
 
-const colorPalettes = ['root', 'palette-cyberpunk', 'palette-sunset', 'palette-ocean'];
+const colorPalettes = ['root', 'cyberpunk', 'sunset', 'ocean'];
 let currentPaletteIndex = 0;
 
 changePallateButton.addEventListener('click', () => {
+    document.body.classList.add('palette-switching');
     currentPaletteIndex = (currentPaletteIndex + 1) % colorPalettes.length;
-    document.body.className = colorPalettes[currentPaletteIndex];
+    const paletteName = colorPalettes[currentPaletteIndex];
+
+    setTimeout(() => {
+        // Remove all old palette classes
+        document.body.classList.remove('palette-root', 'palette-cyberpunk', 'palette-sunset', 'palette-ocean');
+        
+        // Add new palette class if not root
+        if (paletteName !== 'root') {
+            document.body.classList.add(`palette-${paletteName}`);
+        }
+        
+        document.body.classList.remove('palette-switching');
+        localStorage.setItem('selectedPalette', paletteName);
+    }, 300);
 });
 
 // update icon and animation when audio plays/pauses
@@ -162,3 +177,6 @@ dayTriangle.addEventListener('mouseleave', () => {
 });
 
 
+githubButton.addEventListener('click', () => {
+    window.location.href = `https://github.com/arborium-dev/`;
+});
