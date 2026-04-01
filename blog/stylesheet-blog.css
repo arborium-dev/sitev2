@@ -1,0 +1,45 @@
+body {
+    background-color: var(--color-background);
+}   
+
+:root {
+    /* Default Palette (Current) */
+    --color-primary: #ff526b;
+    --color-background: #ffae1a;
+    --color-accent: #4495da;
+    --color-accent-dark: #2c72da;
+    /* --color-accent-bright: #004db3; */
+    --color-text: #ffffff;
+    --color-dark-primary: #794942;
+    --color-text-special: #ffe360;
+}
+
+#playPauseButton {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    
+}
+
+#playPauseButton path {
+    /* stroke: var(--color-primary); */
+    transition: stroke 0.2s ease;
+}
+
+#githubButton {
+    position: fixed;
+    bottom: 56px;
+    left: 10px;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
