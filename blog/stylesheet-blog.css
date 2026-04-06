@@ -1,5 +1,12 @@
+@font-face {
+    font-family: 'Freaky Regular';
+    src: url('../assets/fonts/Freaky\ Regular.otf') format('truetype');
+}
+
 body {
     background-color: var(--color-background);
+    position: relative;
+    z-index: 1;
 }   
 
 :root {
@@ -42,4 +49,41 @@ body {
     border: none;
     cursor: pointer;
     padding: 0;
+}
+
+#waveTopLeftBottom {
+    position: fixed;
+    top: 600px;
+    left: -300px;
+    width: 1400px;
+    height: 900px;
+    pointer-events: none;
+    z-index: -2;
+    transform: rotate(-40deg);
+    transform-origin: top left;
+}
+
+
+#waveTopLeftTop {
+    position: fixed;
+    top: 400px;
+    left: -500px;
+    width: 1400px;
+    height: 900px;
+    pointer-events: none;
+    z-index: -1;
+    transform: rotate(-40deg);
+    transform-origin: top left;
+}
+
+.title {
+    font-family: 'Freaky Regular', cursive;
+    font-size: 12em;
+    color: var(--color-text-special);
+    text-align: left;
+    margin-top: 40px;
+    z-index: 0;
+    top: -50px;
+    left: 30px;
+    position: fixed;
 }
