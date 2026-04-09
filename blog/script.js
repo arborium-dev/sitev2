@@ -1,6 +1,9 @@
-const backgroundMusic = document.getElementById('backgroundMusic');
-const playPauseButton = document.getElementById('playPauseButton');
-const playPausePath = document.getElementById('playPausePath');
+const backgroundMusic = document.querySelector('#backgroundMusic');
+const playPauseButton = document.querySelector('#playPauseButton');
+const playPausePath = document.querySelector('#playPausePath');
+const dayTriangle = document.querySelector('.dayTriangle');
+const githubButton = document.querySelector('#githubButton');
+const maskTriangle = document.querySelector('.maskTriangle');
 
 playPauseButton.addEventListener('click', () => {
     if (backgroundMusic.paused) {
@@ -14,11 +17,26 @@ githubButton.addEventListener('click', () => {
     window.location.href = `https://github.com/arborium-dev/`;
 });
 
+
+dayTriangle.addEventListener('click', () => {
+     window.location.href = '../main'; 
+});
+
+
+
+dayTriangle.addEventListener('mouseenter', () => {
+    maskTriangle.style.animation = 'maskCoverDayTriangle 0.15s ease-out forwards';
+});
+
+dayTriangle.addEventListener('mouseleave', () => {
+    maskTriangle.style.animation = 'maskUncoverDayTriangle 0.15s ease-out forwards';
+});
+
 function updateIcon() {
     if (backgroundMusic.paused) {
         playPausePath.setAttribute('stroke', 'var(--color-primary)');
     } else {
-        playPausePath.setAttribute('stroke', 'var(--color-dark-primary)');
+        playPausePath.setAttribute('stroke', 'var(--color-accent-bright)');
     }
 }
 
@@ -29,15 +47,7 @@ updateIcon();
 // update icon and animation when audio plays/pauses
 backgroundMusic.addEventListener('play', () => {
     updateIcon();
-    updateCircleAnimation();
-    updatePlusAnimations();
-    updateCurrentlyPlaying();
-    updateTempoAnimation();
 });
 backgroundMusic.addEventListener('pause', () => {
     updateIcon();
-    updateCircleAnimation();
-    updatePlusAnimations();
-    updateCurrentlyPlaying();
-    updateTempoAnimation();
 });

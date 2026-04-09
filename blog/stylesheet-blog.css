@@ -1,24 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
 @font-face {
-    font-family: 'Freaky Regular';
-    src: url('../assets/fonts/Freaky\ Regular.otf') format('truetype');
+    font-family: 'Nikkyou Sans';
+    src: url('../assets/fonts/Nikkyou.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Sawarabi';
+    src: url('../assets/fonts/Sawarabi.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Science';
+    src: url('../assets/fonts/Science.ttf') format('truetype');
 }
 
 body {
     background-color: var(--color-background);
-    position: relative;
-    z-index: 1;
-}   
+}  
 
 :root {
     /* Default Palette (Current) */
-    --color-primary: #ff526b;
-    --color-background: #ffae1a;
-    --color-accent: #4495da;
-    --color-accent-dark: #2c72da;
-    /* --color-accent-bright: #004db3; */
+    --color-primary: #fc0b69;
+    --color-background: #09001f;
+    --color-accent: #001837;
+    --color-accent-light: #002f6d;
+    --color-accent-bright: #004db3;
     --color-text: #ffffff;
-    --color-dark-primary: #794942;
-    --color-text-special: #ffe360;
+    --color-dark-primary: #bc0b39;
+}
+
+/* Palette 2: Cyberpunk */
+body.palette-cyberpunk {
+    --color-primary: #00ff41;
+    --color-background: #0a0e27;
+    --color-accent: #1a1a2e;
+    --color-accent-light: #16213e;
+    --color-accent-bright: #0f3460;
+    --color-text: #ffffff;
+    --color-dark-primary: #00cc33;
+}
+
+/* Palette 3: Sunset */
+body.palette-sunset {
+    --color-primary: #ff6b35;
+    --color-background: #1a1a1a;
+    --color-accent: #2d2d2d;
+    --color-accent-light: #f7931e;
+    --color-accent-bright: #fdb833;
+    --color-text: #ffffff;
+    --color-dark-primary: #c74423;
+}
+
+/* Palette 4: Ocean */
+body.palette-ocean {
+    --color-primary: #1e90ff;
+    --color-background: #0a1929;
+    --color-accent: #132f4c;
+    --color-accent-light: #1565c0;
+    --color-accent-bright: #0d47a1;
+    --color-text: #e0f2f1;
+    --color-dark-primary: #01579b;
+}
+
+* {
+    transition: background-color 0.6s ease, color 0.6s ease, border-color 0.6s ease, -webkit-text-stroke-color 0.6s ease;
+}
+
+body.palette-switching * {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, -webkit-text-stroke-color 0.3s ease;
 }
 
 #playPauseButton {
@@ -51,39 +103,131 @@ body {
     padding: 0;
 }
 
-#waveTopLeftBottom {
+
+.coolTriangle {
     position: fixed;
-    top: 600px;
-    left: -300px;
-    width: 1400px;
-    height: 900px;
-    pointer-events: none;
-    z-index: -2;
-    transform: rotate(-40deg);
-    transform-origin: top left;
+    right: 0;
+    bottom: 0;
+    width: 430px;
+    height: 430px;
+
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+    background: var(--color-primary);
+    /* overflow: hidden; */
+    /* le text */
+/* 
+    font-family: "JetBrains Mono", monospace;
+    color: #fc0b69;
+    font-size: 1.5em;
+    outline: #09001f;
+    outline-width: 2px;
+    outline-style: solid;
+     */
+}
+
+.triangleText {
+    font-family: "Poppins", monospace;
+    font-size: 4.5em;
+    line-height: 0.75em;
+
+    color: transparent;
+    /* -webkit-text-stroke: 2.4px var(--color-background); */
+    -webkit-text-stroke: 2.4px var(--color-dark-primary);
+    -webkit-text-stroke-linecap: round;
+    -webkit-text-stroke-linejoin: round;
+    
+    
+    text-align: right;
+
+    position: absolute;
+    bottom: 0;
+    
 }
 
 
-#waveTopLeftTop {
+.currentlyPlaying {
+    transform: rotate(-45deg);
+    font-family: "Nikkyou Sans", monospace;
+    font-size: 4em;
+    
+    text-wrap: nowrap;
+
+    /* color:transparent;
+    /* -webkit-text-stroke: 2.4px #204887; 
+    -webkit-text-stroke: 2.4px #fc0b69;
+    -webkit-text-stroke-linecap: round;
+    -webkit-text-stroke-linejoin: round; */
+
+    color: var(--color-primary);
+
     position: fixed;
-    top: 400px;
-    left: -500px;
-    width: 1400px;
-    height: 900px;
-    pointer-events: none;
+    right: 0;
+    bottom: -40px;
+    
+    animation: nowPlayingScroll 8s linear infinite;
+}
+
+.currentlyPlaying.paused {
+    animation-play-state: paused;
+}
+
+@keyframes nowPlayingScroll {
+    0% {
+        right: -60vw;
+        bottom: 49.5vw;
+    }   
+    100% {
+        right: 30vw;
+        bottom: -40.5vw;
+    }
+}
+
+
+.dayTriangle {
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    width: 200px;
+    height: 200px;
     z-index: -1;
-    transform: rotate(-40deg);
-    transform-origin: top left;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    background-color: var(--color-primary);
+
+    cursor: pointer;
+    /* transition: opacity 0.3s ease; */
 }
 
-.title {
-    font-family: 'Freaky Regular', cursive;
-    font-size: 12em;
-    color: var(--color-text-special);
-    text-align: left;
-    margin-top: 40px;
-    z-index: 0;
-    top: -50px;
-    left: 30px;
-    position: fixed;
+/* .dayTriangle:hover {
+    background-color: white;
+} */
+
+.maskTriangle {
+    position: absolute;
+    top: -200px;
+    left: 0;
+    width: 200px;
+    height: 200px;
+
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    background-color: var(--color-text);
+
+    opacity: 1;
+}
+
+@keyframes maskCoverDayTriangle {
+    0% {
+        top: -200px;
+    }
+    100% {
+        top: 0;
+    }
+}
+
+@keyframes maskUncoverDayTriangle {
+    0% {
+        top: 0;
+    }
+    100% {
+        top: -200px;
+    }
 }
