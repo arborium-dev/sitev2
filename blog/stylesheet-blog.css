@@ -122,6 +122,58 @@ body.palette-switching * {
     transition: stroke 0.2s ease;
 }
 
+.scrollableContainerBlog {
+    position: fixed;
+    left: 220px;
+    top: 140px;
+    width: 40%;
+    height: 100%;
+    z-index: 100;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.scrollableContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.blogPostList {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 2.75em;
+    color: var(--color-primary);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.blogPostLine {
+    cursor: pointer;
+    line-height: 1.6;
+    transition: color 0.2s ease, -webkit-text-stroke-color 0.2s ease;
+}
+
+.blogPostLine:hover {
+    color: var(--color-accent-light);
+    -webkit-text-stroke-color: var(--color-accent-light);
+}
+
+/* Custom scrollbar styling */
+
+.scrollableContainerBlog::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.scrollableContainerBlog::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 4px;
+}
+
+.scrollableContainerBlog::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent-light);
+}
+
 
 .coolTriangle {
     position: fixed;
@@ -368,7 +420,7 @@ body.palette-switching * {
 .bottomBigText {
     position: fixed;
     bottom: -12%;
-    left: 210px;
+    right: 360px;
     font-family: "Nikkyou Sans", monospace;
     font-size: 20.5em;
     color: transparent;
