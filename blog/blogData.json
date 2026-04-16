@@ -1,0 +1,16 @@
+{
+    "posts": [
+        {
+        "title": "welcome!",
+        "date": "2026-04-11",
+        "preview": "This is the first post on my new blog. Stay tuned for more updates!",
+        "image-path": "../assets/blog/images/welcome.jpg"
+        },
+        {
+        "title": "UNBEATABLE is Persona 4",
+        "date": "2026-06-8",
+        "preview": "Why UNBEATABLE is actually a Persona 4 fangame.",
+        "image-path": "../assets/blog/images/journey.jpg"
+        }
+    ]
+}

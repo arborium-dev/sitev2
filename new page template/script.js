@@ -98,33 +98,3 @@ updateTime();
 setInterval(updateTime, 1000); // Update every second
 updateDate();
 setInterval(updateDate, 86400000); // Update every day
-
-
-
-const blogPostList = document.querySelector('.blogPostList')
-
-function loadBlogPostList() {
-    fetch('blogData.json')
-        .then(response => response.json())
-        .then(data => {
-            // Clear existing lines
-            blogPostList.innerHTML = '';
-            
-            data.posts.forEach(post => {
-                const postLine = document.createElement('div');
-                postLine.classList.add('blogPostLine');
-                postLine.textContent = `// ${post.title}`;
-                postLine.addEventListener('click', () => {
-                    // Navigate to individual blog post
-                    const postSlug = post.title.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-                    window.location.href = `${postSlug}.html`;
-                });
-                blogPostList.appendChild(postLine);
-            });
-        })
-        .catch(error => {
-            console.error('Error loading blog posts:', error);
-        });
-}
-
-loadBlogPostList();

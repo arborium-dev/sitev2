@@ -163,7 +163,7 @@ setInterval(updateDate, 86400000); // Update every day
 
 
 dayTriangle.addEventListener('click', () => {
-     window.location.href = 'overseer.html'; 
+     window.location.href = '../overseer'; 
 });
 
 const maskTriangle = document.querySelector('.maskTriangle');
