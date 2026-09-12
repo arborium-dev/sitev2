@@ -155,7 +155,7 @@ body.palette-switching * {
 }
 
 .blogPostLine:hover {
-    color: var(--color-accent-light);
+    color: var(--color-text);
     -webkit-text-stroke-color: var(--color-accent-light);
 }
 
@@ -173,6 +173,51 @@ body.palette-switching * {
 .scrollableContainerBlog::-webkit-scrollbar-thumb:hover {
     background: var(--color-accent-light);
 }
+
+.blogPreview {
+
+}
+
+.blogPreviewImage {
+    position: fixed;
+    right: 300px;
+    top: 100px;
+    width: 440px;
+    height: 440px;
+    /* border-radius: 100%; */
+    border-color: var(--color-accent);
+    border-width: 10px;
+    border-style: solid;
+
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.blogPreviewImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    
+}
+
+.blogPreviewTitle {
+    right: 300px;
+    top: 560px;
+}
+
+.blogPreviewDate {
+    
+}
+
+.blogPreviewExcerpt {
+    
+}
+
+
 
 
 .coolTriangle {
